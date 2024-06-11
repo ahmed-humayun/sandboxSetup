@@ -12,21 +12,19 @@ This project involves setting up a sandbox environment with a Windows VM running
 
 ## Steps to Set Up the Environment
 
-### 1. Set Up the Windows VM
-
-1. **Download the Windows 10 ISO**
+### 1. **Download the Windows 10 ISO**
    - Download link: [Windows 10 ISO](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-10-enterprise)
      ![Windows 10 ISO Download Page](Screenshot%20(70).png)
-2. **Create a new Virtual Machine in VirtualBox**
-     ![VM Setup](Screenshot%20(78).png)
-3. **Install Windows 10**
+### 2. **Create a new Virtual Machine in VirtualBox**
+   - ![VM Setup](Screenshot%20(78).png)
+### 3. **Install Windows 10**
    - Start the newly created virtual machine and click "Install Now" to install Windows 10 in the Virtual Machine
      ![install windows10](Screenshot%20(80).png)
    - Select the "Custom" option
      ![Custom Setup](Screenshot%20(81).png)
     
    
-4. **Install FLARE VM:**
+### 4. **Install FLARE VM:**
    - When the Windows 10 installation is finished, disable the automatic proxy setup
      ![proxy setup](Screenshot%20(92).png)
    - Turn off all Windows Defender settings
@@ -41,11 +39,11 @@ This project involves setting up a sandbox environment with a Windows VM running
    - Wait for installation to finish.
    - **Installation can take a very long time to finish**
      ![flare VM](Screenshot%20(98).png)
-5. **Install REMnux:**
+### 5. **Install REMnux:**
    - Download REMnux OVA file: [REMnux OVA](https://app.box.com/s/8matvs5l0gc8vkr4xfq3szdm7mc9o0ad)
    - Create a new Virtual Machine using the OVA file.
      ![REMnux VM](Screenshot%20(103).png)
-6. Create a Host-Only Network.
+### 6. Create a Host-Only Network.
    - On VirtualBox configure a new Host-Only Network. Configure both Adaptar and DHCP server.
      ![Host-only Network Adaptar](Screenshot%20(99).png)
      ![Host-only Network DHCP](Screenshot%20(100).png)
@@ -54,7 +52,7 @@ This project involves setting up a sandbox environment with a Windows VM running
    - Check IP addresses for both VMs
      ![Windows IP](Screenshot%20(102).png)
      ![REMnux IP](Screenshot%20(104).png)
-7. **Configure INetSim on REMnux**
+### 7. **Configure INetSim on REMnux**
    - REMnux comes with INetSim Installed. To change its configuration open its configuration file.
      ```bash
         sudo scite /etc/inetsim/inetsim.conf
