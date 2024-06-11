@@ -15,8 +15,11 @@ This project involves setting up a sandbox environment with a Windows VM running
 ### 1. **Download the Windows 10 ISO**
    - Download link: [Windows 10 ISO](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-10-enterprise)
      ![Windows 10 ISO Download Page](Screenshot%20(70).png)
+
 ### 2. **Create a new Virtual Machine in VirtualBox**
-   - ![VM Setup](Screenshot%20(78).png)
+   - Virtual box setup:
+     ![VM Setup](Screenshot%20(78).png)
+
 ### 3. **Install Windows 10**
    - Start the newly created virtual machine and click "Install Now" to install Windows 10 in the Virtual Machine
      ![install windows10](Screenshot%20(80).png)
@@ -39,10 +42,12 @@ This project involves setting up a sandbox environment with a Windows VM running
    - Wait for installation to finish.
    - **Installation can take a very long time to finish**
      ![flare VM](Screenshot%20(98).png)
+
 ### 5. **Install REMnux:**
    - Download REMnux OVA file: [REMnux OVA](https://app.box.com/s/8matvs5l0gc8vkr4xfq3szdm7mc9o0ad)
    - Create a new Virtual Machine using the OVA file.
      ![REMnux VM](Screenshot%20(103).png)
+
 ### 6. Create a Host-Only Network.
    - On VirtualBox configure a new Host-Only Network. Configure both Adaptar and DHCP server.
      ![Host-only Network Adaptar](Screenshot%20(99).png)
@@ -52,6 +57,7 @@ This project involves setting up a sandbox environment with a Windows VM running
    - Check IP addresses for both VMs
      ![Windows IP](Screenshot%20(102).png)
      ![REMnux IP](Screenshot%20(104).png)
+
 ### 7. **Configure INetSim on REMnux**
    - REMnux comes with INetSim Installed. To change its configuration open its configuration file.
      ```bash
@@ -62,7 +68,7 @@ This project involves setting up a sandbox environment with a Windows VM running
      ![inetsim.conf](Screenshot%20(105).png)
    - Change "dns_default_ip" to REMnux's IP address
      ![inetsim.conf default ip](Screenshot%20(111).png)
-   - Save file and then start INetSim
+   - Save the file and then start INetSim
      ```bash
      inetsim
      ```
@@ -70,11 +76,11 @@ This project involves setting up a sandbox environment with a Windows VM running
    - On Windows VM open a browser and connect to REMnux's IP address, it will open the INetSim's default webpage
      ![inetsim webpage](Screenshot%20(109).png)
    - On the Windows VM, change the DNS Server address to REMnux's IP address
-     ![WIndows VM DNS](Screenshot%20(110).png)
+     ![Windows VM DNS](Screenshot%20(110).png)
    - On the browser, type any random web address, it will open the INetSim's default webpage
      ![inetsim webpage](Screenshot%20(112).png)
-   - To test concectivity in both VMs, ping RMEnux from WIndows VM and vice-versa
+   - To test connectivity in both VMs, ping RMEnux from Windows VM and vice-versa
      ![ping](Screenshot%20(113).png)
 
-     ## Conclusion
-      You now have a sandbox environment with a Windows VM running FLARE VM and a REMnux VM running INetSim, connected through a host-only network. This setup provides a           secure environment for analyzing malware and simulating network traffic without risking your primary network.
+## Conclusion
+   We now have a sandbox environment with a Windows VM running FLARE VM and a REMnux VM running INetSim, connected through a host-only network. This setup provides a           secure environment for analyzing malware and simulating network traffic without risking your primary network.
